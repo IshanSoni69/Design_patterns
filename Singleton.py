@@ -5,7 +5,7 @@ class StrictSingleton:
     __instance = {} # For name mangling
     _lock = threading.Lock()
 
-    def __new__(cls):
+    def __new__(cls, *args, **kwargs):
         if cls not in cls.__instance:
             with cls._lock:
                 if cls not in cls.__instance:
